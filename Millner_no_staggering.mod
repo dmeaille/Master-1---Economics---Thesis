@@ -1,8 +1,7 @@
 /*
 *
 * 
-Date : 25/05/22
-Last modification : 03/06/2022
+Last modification : 27/06/2022
 Author : Davi Méaille 
 *
 *
@@ -11,20 +10,14 @@ Description :
 This mod.file implements the Dietz and Millner model in a RBC model with deviation in trend from 
 steady-state temperature. It models the impact of a shock of temperature and the 
 response in building of public adaptation capital at different stages of climate change. 
-We assume a time-to-build hypothesis on the building of public capital, as in Bouakez and Guillard (2020).
-This allows to draw different impulse-response functions, that are generally smoother that in the Leeper(2010) case. 
+We assume a time-to-build hypothesis on the building of public capital, as in Bouakez and Guillard (2020). 
 *
-There is only one recquirement : for the Bouakez and Guillard(2020) time-to-build specification to work, 
-when included, we have to add friction on investment capital, for private, public productive and 
-protection capital. 
-*
-This allows also to check for the robustness of our paper's results, as the time-to-build is an important 
-explaining factor.  
 *
 We use symbolic functions to compute the steady-state for protection capital and the following 
 steady-state for output. 
 *
-This mod_file implements all of the different specifications we can have with if blocks.
+This mod_file allows to implement all of the different specifications steps by steps with the different 
+parameters at the beginning. 
 *
 *
 *
@@ -37,11 +30,11 @@ This mod_file implements all of the different specifications we can have with if
     $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 */
 
-// Forme de la fonction d'utilité
+//------// Utility function form //-----//
 // Set 1 for log additive utility (log of multiplicative), 2 for multiplicative utility, or some other values for additive CRRA utility 
 @#define log_utility = 2
 
-//-----// Implémentation progressive //-----//
+//-----// Step by step implementation //-----//
 // Set 10 for protective without adaptation capital, 11 for both, 00 for none, 01 for only adaptation
 @#define productive_protection = 11
 @#define productive_capital = 1
@@ -52,8 +45,6 @@ This mod_file implements all of the different specifications we can have with if
 
 // Share of adaptative capital kP over Y at the steady-state
 share = 0.30;
-
-
 
 
 var 
