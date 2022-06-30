@@ -1,8 +1,8 @@
 # Master-1---Economics---Thesis
-%
-% Supplementary material for the thesis: "Modeling the relation between adaptation investment and public debt"
-%
-% These files are here to reproduce the results of my thesis. There are divided in two files. 
+#
+# Supplementary material for the thesis: "Modeling the relation between adaptation investment and public debt"
+#
+# These files are here to reproduce the results of my thesis. There are divided in two files. 
 
 **********************************************************************************************************
 → One folder contains the mod.file to run on Dynare. 
